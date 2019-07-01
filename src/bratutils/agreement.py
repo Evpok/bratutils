@@ -283,10 +283,10 @@ class Annotation:
     def _parse_annotation(a):
         items = a.split("\t")
         text = items[2].strip("\n").strip(" ")
-        subitems = items[1].split(" ")
-        tag_name = subitems[0]
-        start_idx = int(subitems[1])
-        end_idx = int(subitems[2])
+        tag_name, ranges = items[1].split(" ", maxsplit=1)
+        used_range = ranges.split(";", maxsplit=1)[0].split(" ")
+        start_idx = int(used_range[0])
+        end_idx = int(used_range[1])
         return text, tag_name, start_idx, end_idx
 
     def reset_markers(self):
