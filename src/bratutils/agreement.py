@@ -61,7 +61,7 @@ def standard_logger(name='bratutils', log_path=None, log_level=logging.INFO):
     return logger
 
 
-logger = standard_logger(name='agreement', log_level=logging.DEBUG)
+logger = standard_logger(name='agreement')
 
 
 class Comparison:
