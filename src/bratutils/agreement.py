@@ -642,7 +642,7 @@ class Document:
             self.basename = os.path.basename(fp)
             with open(fp) as doc:
                 for line in doc:
-                    if not line.startswith("#"):
+                    if line.startswith("T"):
                         self.tags.append(Annotation(line))
         elif ann_list:
             for line in ann_list:
